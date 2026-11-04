@@ -236,20 +236,34 @@ export default function Projects() {
                 className="flex flex-1 cursor-pointer flex-col text-left"
               >
                 {/* Project artwork */}
-                <div
-                  className={`relative flex h-52 items-center justify-center overflow-hidden bg-gradient-to-br ${gradients[index % gradients.length]}`}
-                >
-                  <div className="absolute h-40 w-40 rounded-full bg-purple-500/20 blur-3xl" />
+                
+{/* Project artwork */}
+<div
+  className={`relative flex h-52 items-center justify-center overflow-hidden bg-gradient-to-br ${gradients[index % gradients.length]}`}
+>
+  {project.image ? (
+    <img
+      src={project.image}
+      alt={`${project.title} screenshot`}
+      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  ) : (
+    <>
+      <div className="absolute h-40 w-40 rounded-full bg-purple-500/20 blur-3xl" />
 
-                  <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl border border-purple-400/30 bg-[#080811]/60 text-3xl font-extrabold tracking-tight text-purple-200 shadow-2xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                    {getInitials(project.title)}
-                  </div>
+      <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl border border-purple-400/30 bg-[#080811]/60 text-3xl font-extrabold tracking-tight text-purple-200 shadow-2xl backdrop-blur-sm">
+        {getInitials(project.title)}
+      </div>
+    </>
+  )}
 
-                  <span className="absolute bottom-4 right-4 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/30 px-3 py-1.5 text-xs text-zinc-200 backdrop-blur-sm">
-                    View Details
-                    <ArrowUpRight size={13} />
-                  </span>
-                </div>
+  <span className="absolute bottom-4 right-4 inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-xs text-white backdrop-blur-sm">
+    View Details
+    <ArrowUpRight size={13} />
+  </span>
+</div>
+
 
                 <div className="flex-1 p-6 pb-3">
                   <p className="mb-2 text-sm font-medium text-purple-400">
