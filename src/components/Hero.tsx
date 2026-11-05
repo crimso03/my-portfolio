@@ -153,15 +153,14 @@ export default function Hero() {
           </a>
 
           
-          <button
-            type="button"
-            disabled
-            title="Resume link will be added later"
-            className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl border border-white/10 px-6 py-3 font-medium text-zinc-500"
-          >
-            <Download size={18} />
-            Resume
-          </button>
+          <a
+  href="/resume.pdf"
+  download="Sihabun-Sakib-Hemal-Resume.pdf"
+  className="inline-flex items-center gap-2 rounded-xl border border-purple-500/40 px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20"
+>
+  <Download size={18} />
+  Download Resume
+</a>
         </motion.div>
 
         
